@@ -1,0 +1,113 @@
+/* GENERAL HTML */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-size: 18px;
+	font-family: system-ui, sans-serif;
+	line-height: 1.4;
+	color: var(--textcolor);
+	background: var(--bgcolor);
+	position: relative;
+	//overflow-y: scroll;
+	//max-width: 64em;
+	/* remove this for a full-width layout */
+	/* centers the layout */
+}
+
+p > section {
+	color: blue;
+}
+
+header {
+	position: sticky;
+	top: 0px;
+	width: 100%;
+	height: 40px;
+	background-color: black;
+	z-index: 1;
+	span {
+		z-index: 2;
+		color: white;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+footer {
+	width: 100%;
+	height: 40px;
+	background-color: black;
+	position: fixed;
+	bottom: 0px;
+	span {
+		justify-content: center;
+	}
+	a {
+		color: white;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+section {
+	padding: calc(6em + 5vw) 5vw 8vw 5vw;
+	/* ! Everything below is needed ! */
+	//display: none;
+	position: absolute;
+	top: 0;
+	min-height: 100vh;
+	width: 100%;
+	background: var(--bgcolor);
+}
+
+img, svg, video, audio {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	fill: currentColor;
+}
+    
+
+/* CUSTOM CLASSES */
+.slides {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100vh;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+}
+
+.slides figure {
+	height: 100vh;
+	padding: 0 5vw;
+	margin: 0;
+	display: grid;
+	place-items: center;
+	align-content: center;
+	scroll-snap-align: center;
+}
+
+.slides figure img {
+	max-height: 77vh;
+	/* Adjust if needed */
+}
+
+.slides figure.cover {
+	padding: 0;
+}
+
+.slides figure.cover img {
+	max-height: none;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+}
+.slides figure.cover p {
+	z-index: 1;
+}

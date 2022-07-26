@@ -1,0 +1,1 @@
+{"version":3,"file":"index.921a5f0e45492772048c.js","mappings":"mBAEAA,QAAQC,IAAI,Q","sources":["webpack://barebones/./src/js/index.js"],"sourcesContent":["import '../css/main.less';\n\nconsole.log('hello')\n"],"names":["console","log"],"sourceRoot":""}
