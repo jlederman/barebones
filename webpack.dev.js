@@ -20,14 +20,15 @@ module.exports = merge(common, {
             'Access-Control-Allow-Methods': '*',
         },
         compress: true,
-        allowedHosts: 'template.local',
-        proxy: {
-            '/post': {
-                 target: 'http://localhost:5000/',
-                 logLevel: 'debug' /*optional*/,
-                 secure: false,
+        allowedHosts: ['template.local'],
+        proxy: [
+            {
+                context: ['/post'],
+                target: 'http://localhost:5000/',
+                secure: false,
+                changeOrigin: true
             }
-         }
+        ]
     },
     module: {
         rules: [
